@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import {Navbar, NavbarBrand} from 'reactstrap';
+//importamos el componente que acabamos de crear 
+import Menu from './components/MenuComponent';
 import './App.css';
 
 class App extends Component{
@@ -8,12 +10,13 @@ class App extends Component{
     return (
       <div className="App">
         <Navbar dark color="primary">
-        <div className='container'>
+        <div className='container'> 
           <NavbarBrand href="/">
             Ristorant con Fusion 
           </NavbarBrand>
         </div> 
         </Navbar>
+        <Menu/>
       </div>
     );
   }
