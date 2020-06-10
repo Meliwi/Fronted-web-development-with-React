@@ -1,6 +1,6 @@
 //Vamos a crear un nuevo componente 
 import React, {Component} from 'react';
-import {Media, Card,CargImg, CardImgOverlay,CardText,CardBody,CardTitle, CardImg} from 'reactstrap';
+import {Card,CargImg, CardImgOverlay,CardText,CardBody,CardTitle, CardImg} from 'reactstrap';
 
 class Menu extends Component {
     //Definimos el constructor de este componente 
@@ -10,6 +10,10 @@ class Menu extends Component {
         this.state = {
             selectedDish: null
         }
+        console.log('Menu Component constructor is invoked');
+    }
+    componentDidMount(){
+        console.log('Menu Component componentDidMount is invoked');
     }
     //cambiar el estado del componente así 
     onDishSelect(dish){
@@ -21,7 +25,7 @@ class Menu extends Component {
                 <Card>
                     <CardImg width="100%" object src={dish.image} alt = {dish.name}/>
                     <CardBody>
-                        <CardTitle >
+                        <CardTitle>
                             {dish.name}
                         </CardTitle>
                         <CardText>
@@ -53,6 +57,7 @@ class Menu extends Component {
                 </div>
             );
         });
+        console.log('Menu component render is invoked');
         return (
             <div className="container">
                 <div className="row">
