@@ -1,6 +1,6 @@
 //Vamos a crear un nuevo componente 
 import React, {Component} from 'react';
-import {Media} from 'reactstrap';
+import {Media, Card,CargImg, CardImgOverlay,CardText,CardBody,CardTitle, CardImg} from 'reactstrap';
 
 class Menu extends Component {
     //Definimos el constructor de este componente 
@@ -8,41 +8,59 @@ class Menu extends Component {
         super(props);
         //El estado del componente
         this.state = {
-
+            selectedDish: null
+        }
     }
-}
+    //cambiar el estado del componente así 
+    onDishSelect(dish){
+        this.setState({selectedDish:dish});
+    }
+    renderDish(dish){
+        if(dish != null){
+            return (
+                <Card>
+                    <CardImg width="100%" object src={dish.image} alt = {dish.name}/>
+                    <CardBody>
+                        <CardTitle >
+                            {dish.name}
+                        </CardTitle>
+                        <CardText>
+                            {dish.description}
+                        </CardText>
+                    </CardBody>
+                </Card>
+            );
+        }
+        else {
+            return (
+                <div>
+                </div>
+            )
+        }
+    }
     render(){
-        //Propiedad de la lista 
-        //Lo que hace esta constante es igual una funcion que accede a dishes con props y usa 
-        //map para returnar una lista en la App 
-
         const menu = this.props.dishes.map((dish)=>{
             return (
-                <div key={dish.id} className="col-12 mt-5">
-                    <Media tag = "li">
-                        <Media left middle>
-                            <Media object src={dish.image} alt = {dish.name}/>
-                        </Media>
-                        <Media body className="ml-5">
-                            <Media heading >
+                <div key={dish.id} className="col-12 col-md-5 m-1">
+                    <Card onClick={()=>this.onDishSelect(dish)}>
+                        <CardImg width="100%" object src={dish.image} alt = {dish.name}/>
+                        <CardImgOverlay body className="ml-5">
+                            <CardTitle >
                                 {dish.name}
-                            </Media>
-                            <p>
-                                {dish.description}
-                            </p>
-                        </Media>
-                    </Media>
+                            </CardTitle>
+                        </CardImgOverlay>
+                    </Card>
                 </div>
             );
         });
         return (
             <div className="container">
                 <div className="row">
-                    <Media list>
-                        {menu}
-                    </Media>
+                    {menu}
                 </div>
-
+                <div className="row">
+                    {this.renderDish(this.state.selectedDish)}
+                </div>
             </div>
         );
     }
