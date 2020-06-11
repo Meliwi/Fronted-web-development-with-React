@@ -15,45 +15,47 @@ class DishDetail extends Component{
           </Card>
         );
       }
-      //Task 3 - renderComments()
-      renderComments(comments) {
-        return(
-                <ul className="list-unstyled">
-                    {comments.map((comment) => {
-                        return (
-                            <li key={comment.id}>
-                                <div>
-                                    {comment.comment}
-                                </div>
-                                <br /> 
-                                <div> 
-                                    -- {comment.author},
-                                      {comment.date}
-                                </div>
-                            </li>
-                        );
-                    })}
-                </ul>
-        );
+      //Task 3 - function renderComments()
+      renderComments(comments){
+          return(
+              <ul className="list-unstyled">
+                  {comments.map((comment)=>{
+                      return(
+                          <li key={comment.id}>
+                              <p>
+                                  {comment.comment}
+                              </p>
+                              <p>
+                                  -- {comment.author},
+                                  {comment.date}
+                              </p>
+                              
+                          </li>
+                      );
+                  })}
+              </ul>
+          );
+      }
 
-    }
-    //Using functions in render 
-    render() {
+    //using functions here
+    render(){
         const dish = this.props.dish;
-        if (dish != null) {
+        if (dish!=null){
             return(
-                <div class="row">
+                <div className="row">
                     <div className="col-12 col-md-5 m-1">
-                        {this.renderDish(dish)}
+                        {this.renderDis(dish)}
                     </div>
                     <div className="col-12 col-md-5 m-1">
-                        <h4>Comments</h4>
+                        <h4>
+                            Comments
+                        </h4>
                         {this.renderComments(dish.comments)}
                     </div>
                 </div>
             );
         }
-        else {
+        else{
             return(
                 <div>
                 </div>
@@ -61,5 +63,5 @@ class DishDetail extends Component{
         }
     }
 }
-// export the DishDetail 
+// exporting DishDetail 
 export default DishDetail;
