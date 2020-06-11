@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Card,CargImg, CardImgOverlay,CardText,CardBody,CardTitle, CardImg} from 'reactstrap';
+import {Card,CardText, CardImgOverlay,CardBody,CardTitle, CardImg} from 'reactstrap';
 
 class DishDetail extends Component{ 
 
@@ -9,8 +9,8 @@ class DishDetail extends Component{
           <Card dish={dish}>
             <CardImg width="100%" src={dish.image} alt={dish.name} />
             <CardBody>
-              <CardTitle>{dish.name}</CardTitle>
-              <CardText>{dish.description}</CardText>
+                <CardTitle>{dish.name}</CardTitle>
+                <CardText>{dish.description}</CardText>
             </CardBody>
           </Card>
         );
@@ -21,10 +21,15 @@ class DishDetail extends Component{
                 <ul className="list-unstyled">
                     {comments.map((comment) => {
                         return (
-                            <li key={comment.id} >
-                                <div>{comment.comment}</div>
-                                <br />
-                                <div>-- {comment.author} , {comment.date}</div>
+                            <li key={comment.id}>
+                                <div>
+                                    {comment.comment}
+                                </div>
+                                <br /> 
+                                <div> 
+                                    -- {comment.author},
+                                      {comment.date}
+                                </div>
                             </li>
                         );
                     })}
@@ -35,7 +40,6 @@ class DishDetail extends Component{
     //Using functions in render 
     render() {
         const dish = this.props.dish;
-
         if (dish != null) {
             return(
                 <div class="row">
@@ -51,10 +55,11 @@ class DishDetail extends Component{
         }
         else {
             return(
-                <div></div>
+                <div>
+                </div>
             );
         }
     }
 }
-
+// export the DishDetail 
 export default DishDetail;
