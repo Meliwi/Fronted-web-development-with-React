@@ -1,47 +1,21 @@
-//Vamos a crear un nuevo componente 
 import React, {Component} from 'react';
 import {Card,CargImg, CardImgOverlay,CardText,CardBody,CardTitle, CardImg} from 'reactstrap';
+import DishDetail from './DishdetailComponent';
 
 class Menu extends Component {
-    //Definimos el constructor de este componente 
+    //Definition of constructor of this component 
     constructor(props){
         super(props);
-        //El estado del componente
+        //state of component 
         this.state = {
             selectedDish: null
         }
-        console.log('Menu Component constructor is invoked');
     }
-    componentDidMount(){
-        console.log('Menu Component componentDidMount is invoked');
-    }
-    //cambiar el estado del componente así 
+    //Change the state of the componente like this:
     onDishSelect(dish){
         this.setState({selectedDish:dish});
     }
-    renderDish(dish){
-        if(dish != null){
-            return (
-                <Card>
-                    <CardImg width="100%" object src={dish.image} alt = {dish.name}/>
-                    <CardBody>
-                        <CardTitle>
-                            {dish.name}
-                        </CardTitle>
-                        <CardText>
-                            {dish.description}
-                        </CardText>
-                    </CardBody>
-                </Card>
-            );
-        }
-        else {
-            return (
-                <div>
-                </div>
-            )
-        }
-    }
+ 
     render(){
         const menu = this.props.dishes.map((dish)=>{
             return (
@@ -64,11 +38,10 @@ class Menu extends Component {
                     {menu}
                 </div>
                 <div className="row">
-                    {this.renderDish(this.state.selectedDish)}
+                <DishDetail dish= {this.state.selectedDish}/>
                 </div>
             </div>
         );
     }
-}
-//No olvidarse de exportar el componente del archivo 
+} 
 export default Menu; 
