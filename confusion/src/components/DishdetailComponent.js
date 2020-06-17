@@ -2,7 +2,6 @@ import React from 'react';
 import {Card,CardText, CardImgOverlay,CardBody,CardTitle, CardImg} from 'reactstrap';
 
 
-    //Task 2 - function renderDish() 
     function RenderDish({dish}) {
         return(
           <Card dish={dish}>
@@ -14,8 +13,7 @@ import {Card,CardText, CardImgOverlay,CardBody,CardTitle, CardImg} from 'reactst
           </Card>
         );
       }
-      //Task 3 - function renderComments()
-      //Now we change the format of hour 
+      //Now we change the format of the hour 
       function RenderComments({comments}){
           return(
               <ul className="list-unstyled">
@@ -37,7 +35,6 @@ import {Card,CardText, CardImgOverlay,CardBody,CardTitle, CardImg} from 'reactst
           );
       }
 
-    //using functions here
     //the render function now is a function component
     const DishDetail =(props) =>  {
         console.log('Dishdetail Component render invoked');
@@ -66,5 +63,4 @@ import {Card,CardText, CardImgOverlay,CardBody,CardTitle, CardImg} from 'reactst
         }
     }
 
-// exporting DishDetail 
 export default DishDetail;
