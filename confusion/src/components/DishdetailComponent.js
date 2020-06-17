@@ -4,7 +4,11 @@ import {Card,CardText, CardImgOverlay,CardBody,CardTitle, CardImg} from 'reactst
 class DishDetail extends Component{ 
 
     componentDidMount(){
-        console.log('Dishdetail component ComponentDidMount invoked')
+        console.log('Dishdetail component ComponentDidMount invoked');
+    }
+
+    componentDidUpdate(){
+        console.log('Dishdetail Component componentDidUpdate invoked');
     }
     //Task 2 - function renderDish() 
     renderDish(dish) {
@@ -43,6 +47,7 @@ class DishDetail extends Component{
 
     //using functions here
     render(){
+        console.log('Dishdetail Component render invoked');
         const dish = this.props.dish;
         if (dish!=null){
             return(
