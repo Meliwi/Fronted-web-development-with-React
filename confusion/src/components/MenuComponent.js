@@ -1,6 +1,7 @@
 import React from 'react';
 import {Card,CardImgOverlay,CardText,CardBody,CardTitle, CardImg} from 'reactstrap';
 
+    // we return the card in the function component 
     function rederMenuItem({dish,onClick}){
         return(
             <Card onClick={()=>this.props.onClick(dish.id)}>
@@ -12,6 +13,10 @@ import {Card,CardImgOverlay,CardText,CardBody,CardTitle, CardImg} from 'reactstr
             </CardImgOverlay>
         </Card>
         );
+    }
+    //Another way of implementing a functional component 
+    const Menu = (props) => {
+
     }
         const menu = this.props.dishes.map((dish)=>{
             return (
