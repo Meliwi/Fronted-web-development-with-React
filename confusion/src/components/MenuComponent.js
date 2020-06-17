@@ -1,15 +1,7 @@
 import React, {Component} from 'react';
-import {Card,CargImg, CardImgOverlay,CardText,CardBody,CardTitle, CardImg} from 'reactstrap';
+import {Card,CardImgOverlay,CardText,CardBody,CardTitle, CardImg} from 'reactstrap';
 
 
-class Menu extends Component {
-    //Definition of constructor of this component 
-    constructor(props){
-        super(props);
-
-    }
-    
-    render(){
         const menu = this.props.dishes.map((dish)=>{
             return (
                 <div key={dish.id} className="col-12 col-md-5 m-1">
@@ -32,6 +24,5 @@ class Menu extends Component {
                 </div>
             </div>
         );
-    }
-} 
-export default Menu; 
+ 
+export default Menu ;
