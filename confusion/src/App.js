@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {Navbar, NavbarBrand} from 'reactstrap';
 //importamos el componente que acabamos de crear 
 import Main from './components/MainComponent';
 import './App.css';

@@ -3,6 +3,9 @@ import {Card,CardText, CardImgOverlay,CardBody,CardTitle, CardImg} from 'reactst
 
 class DishDetail extends Component{ 
 
+    componentDidMount(){
+        console.log('Dishdetail component ComponentDidMount invoked')
+    }
     //Task 2 - function renderDish() 
     renderDish(dish) {
         return(
@@ -16,6 +19,7 @@ class DishDetail extends Component{
         );
       }
       //Task 3 - function renderComments()
+      //Now we change the format of hour 
       renderComments(comments){
           return(
               <ul className="list-unstyled">

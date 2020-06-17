@@ -8,7 +8,7 @@ class Menu extends Component {
         super(props);
 
     }
- 
+    
     render(){
         const menu = this.props.dishes.map((dish)=>{
             return (
