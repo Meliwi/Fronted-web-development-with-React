@@ -1,17 +1,9 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {Card,CardText, CardImgOverlay,CardBody,CardTitle, CardImg} from 'reactstrap';
 
-class DishDetail extends Component{ 
 
-    componentDidMount(){
-        console.log('Dishdetail component ComponentDidMount invoked');
-    }
-
-    componentDidUpdate(){
-        console.log('Dishdetail Component componentDidUpdate invoked');
-    }
     //Task 2 - function renderDish() 
-    renderDish(dish) {
+    function RenderDish({dish}) {
         return(
           <Card dish={dish}>
             <CardImg width="100%" src={dish.image} alt={dish.name} />
@@ -24,7 +16,7 @@ class DishDetail extends Component{
       }
       //Task 3 - function renderComments()
       //Now we change the format of hour 
-      renderComments(comments){
+      function RenderComments({comments}){
           return(
               <ul className="list-unstyled">
                   {comments.map((comment)=>{
@@ -46,21 +38,21 @@ class DishDetail extends Component{
       }
 
     //using functions here
-    render(){
+    //the render function now is a function component
+    const DishDetail =(props) =>  {
         console.log('Dishdetail Component render invoked');
-        const dish = this.props.dish;
-        if (dish!=null){
+        if (props.dish!=null){
             return(
             <div className="container">
                 <div className="row">
                     <div className="col-12 col-md-5 m-1">
-                        {this.renderDish(dish)}
+                        <RenderDish dish={props.dish}/>
                     </div>
                     <div className="col-12 col-md-5 m-1">
                         <h4>
                             Comments
                         </h4>
-                        {this.renderComments(dish.comments)}
+                        <RenderComments comments ={props.dish.comments}/>
                     </div>
                 </div>
             </div>
@@ -73,6 +65,6 @@ class DishDetail extends Component{
             );
         }
     }
-}
+
 // exporting DishDetail 
 export default DishDetail;
