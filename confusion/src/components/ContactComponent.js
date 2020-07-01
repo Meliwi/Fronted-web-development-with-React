@@ -57,13 +57,13 @@ class Contact extends Component {
             telnum:'',
             email:''
         };
-        if(this.state.touched.firstname && firstname.lenght <3)
+        if(this.state.touched.firstname && firstname.length <3)
             errors.firstname= 'First name should be >= 3 characters ';
-        else if(this.state.touched.firstname && firstname.lenght > 10)
+        else if(this.state.touched.firstname && firstname.length > 10)
             errors.firstname= 'First name should be <= 10 characters ';
-            if(this.state.touched.lastname && lastname.lenght <3)
+            if(this.state.touched.lastname && lastname.length <3)
             errors.lastname= 'Last name should be >= 3 characters ';
-        else if(this.state.touched.lastname && lastname.lenght > 10)
+        else if(this.state.touched.lastname && lastname.length > 10)
             errors.lastname= 'Last name should be <= 10 characters ';
         
         //For the telephone number we'll use this regular expression 
