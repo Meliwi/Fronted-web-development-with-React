@@ -6,6 +6,20 @@ import {Link} from 'react-router-dom';
 // we need to store the state of the form in the state of our react component 
 class Contact extends Component {
 
+    // Instanciamos el constructor, definimos los estados que reflejan los estados de información del formulario 
+    constructor(props){
+        super(props);
+        this.state ={
+            firstname: '',
+            lastname: '',
+            telnum:'',
+            email:'',
+            agree:false,
+            contactType:'Tel.',
+            message:''
+        }  
+    }
+
     render(){
         return(
             <div className="container">
@@ -53,10 +67,32 @@ class Contact extends Component {
                         </div>
                     </div>
                 </div>
+                <div className="row row-content">
+                    <div className="col-12">
+                        <h3>
+                            Send us Your Feeback
+                        </h3>
+                    </div>
+                    <div className="col-12 col-md-9">
+                        <Form>
+                            <FormGroup row>
+                                <Label htmlFor="firstname" md={2}>
+                                    First Name 
+                                </Label> 
+                                <Col md={10}>
+                                    <Input type="text" id="firstname" name="firstname" 
+                                    placeholder="Fist Name"
+                                    value={this.state.firstname}>
+                                        
+                                    </Input>
+                                </Col>       
+                            </FormGroup>
+                        </Form>
+                    </div>
+                </div>
             </div>
         );
     }
-
 }
 
 export default Contact;
