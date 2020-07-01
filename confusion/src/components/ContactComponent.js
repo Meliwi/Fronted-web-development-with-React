@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Breadcrumb,BreadcrumbItem, Button, Form, FormGroup, Label, Input, Col} from 'reactstrap';
+import {Breadcrumb,BreadcrumbItem, Button, Form, FormGroup, Label, Input, Col, FormFeedback} from 'reactstrap';
 import {Link} from 'react-router-dom';
 
 // We need to turn this component into a class component, because 
@@ -16,7 +16,13 @@ class Contact extends Component {
             email:'',
             agree:false,
             contactType:'Tel.',
-            message:''
+            message:'',
+            touched: {
+                firstname: false, 
+                lastname: false,
+                telnum: false,
+                email: false
+            }
         }  
         this.handleSubmit= this.handleSubmit.bind(this);
         this.handleInputChange= this.handleInputChange.bind(this);
@@ -37,6 +43,22 @@ class Contact extends Component {
         event.preventDefault();
     }
 
+    handleBlur = (field) => (evt) => {
+        this.setState({
+            touched:{ ...this.state.touched, [field]:true}
+        });
+    }
+
+    validate(firstname, lastname, telnum, email){
+        const errors = {
+            firstname: '',
+            lastname: '',
+            telnum:'',
+            email:''
+        };
+        if(this.state.touched.firstname && firstname.lenght <3)
+            errors.firstname= 'First name should be >= 3 characters '
+    }
     render(){
         return(
             <div className="container">
