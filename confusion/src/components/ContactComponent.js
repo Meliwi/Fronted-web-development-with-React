@@ -5,6 +5,13 @@ import {Control, LocalForm, Errors} from 'react-redux-form';
 
 // We need to turn this component into a class component, because 
 // we need to store the state of the form in the state of our react component 
+const required = (val) => val && val.length; 
+const maxLength = (len ) => (val) => !(val) || (val.length <= len);
+const minLength = (len ) => (val) => !(val) && (val.length >= len);
+const isNumber = (val) => !isNaN(Number(val));
+const validEmail = (val) =>  /^[A-Z0-9_%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val);
+
+
 class Contact extends Component {
 
     // Instanciamos el constructor, definimos los estados que reflejan los estados de información del formulario 
