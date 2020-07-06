@@ -16,7 +16,7 @@ class Header extends Component{
     }
     //Method that we use in render 
     toggleNav(){
-        this.setState({
+        this.setState({ 
             isNavOpen:!this.state.isNavOpen
         });
     }
@@ -25,13 +25,13 @@ class Header extends Component{
         this.setState({
             isModalOpen:!this.state.isModalOpen
         });
-		}
+	}
 		
-		handleLogin(event){
-				this.toggleModal();
-				alert("Username "+ this.username.value + "Password: " + this.password.value + "Remember: " + this.remember.checked );
-				event.preventDefault();
-		}
+	handleLogin(event){
+		this.toggleModal();
+		alert("Username "+ this.username.value + "Password: " + this.password.value + "Remember: " + this.remember.checked );
+		event.preventDefault();
+	}
     render(){
         return(
             <React.Fragment>
