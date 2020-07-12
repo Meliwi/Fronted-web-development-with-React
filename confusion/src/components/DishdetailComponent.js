@@ -36,7 +36,7 @@ class CommentForm extends Component{
 				</Button>
 				<Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
 					<ModalHeader toggle={this.toggleModal}>
-											 Submit Comment
+						Submit Comment
 					</ModalHeader>
 					<ModalBody>
 						<LocalForm onSubmit={(values) => this.handleSubmit(values)}>
