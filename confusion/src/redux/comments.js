@@ -1,8 +1,9 @@
-import {COMMENTS} from '../shared/comments';
+import { COMMENTS } from '../shared/comments';
 
 export const Comments = (state = COMMENTS, action) => {
-    switch(action.type){
-        default: 
-            return state; 
-    }
-}
+    switch (action.type) {
+
+        default:
+          return state;
+      }
+};
