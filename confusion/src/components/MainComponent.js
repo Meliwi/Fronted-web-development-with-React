@@ -31,7 +31,6 @@ class Main extends Component{
   }
 
   
-  
 //set the state of selectedDish 
 
   render(){
