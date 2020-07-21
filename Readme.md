@@ -1,8 +1,8 @@
-Front-end web development with react
-React es una biblioteca Javascript de código abierto diseñada para crear interfaces
-de usuario con el objetivo de facilitar el desarollo de aplicaciones de aplicaciones
-en una sola página. 
-Course concentrate on the react library and react ecosystem. 
+## Front-end web development with react
+
+React is an open source Javascript library for creating user interfaces with the aim of facilitating the development of application applications on a single page. This is a repository of my progress in Course at Coursera. 
+
+# What I am going to learn: 
 
 * React
 * Reactstrap 
