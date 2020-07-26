@@ -25,7 +25,7 @@ class CommentForm extends Component{
     })}
 		handleSubmit(values) {
 			this.toggleModal();
-			this.props.addComment(this.props.dishId,values.rating,values.author,values.comment);
+			this.props.postComment(this.props.dishId,values.rating,values.author,values.comment);
 	}
    
     render(){
@@ -129,7 +129,7 @@ class CommentForm extends Component{
       }
       //Now we change the format of the hour 
     
-     function RenderComments({comments, addComment, dishId}){
+     function RenderComments({comments, postComment, dishId}){
          if(comments!=null)
          return(
             <div className="col-12 col-md--5 m-1">
@@ -152,7 +152,7 @@ class CommentForm extends Component{
                      }
                     )}
                 </ul>
-				<CommentForm dishId={dishId} addComment={addComment}>
+				<CommentForm dishId={dishId} postComment={postComment}>
 				</CommentForm>
             </div>
          );
@@ -200,7 +200,7 @@ class CommentForm extends Component{
                         <div className="col-12 col-md-5 m-1">
 							<RenderComments 
 								comments={props.comments} 
-								addComment = {props.addComment}
+								postComment = {props.postComment}
 								dishId = {props.dish.id}
 							/>
                         </div>
