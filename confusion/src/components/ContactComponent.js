@@ -235,7 +235,7 @@ class Contact extends Component {
                             </Row>
 							<Row className="form-group">
                                 <Col md={{size:10,offset:2}}>
-                                    <Button tyep="submit" colo="primary">
+                                    <Button type="submit" color="primary">
                                         Send Feedback
                                     </Button>
                                 </Col>
